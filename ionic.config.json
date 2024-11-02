@@ -1,0 +1,7 @@
+{
+  "name": "MenuSmart",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
