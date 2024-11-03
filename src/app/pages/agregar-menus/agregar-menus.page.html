@@ -1,0 +1,37 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Agregar-menus</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Agregar-menus</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+   <form (ngSubmit)="guardarMenu()">
+    <ion-item>
+      <ion-input [(ngModel)]="nuevoMenu.nombre" name="nombre" label="Nombre" label-placement="floating" fill="outline" placeholder="Nombre del Menú" required></ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-input [(ngModel)]="nuevoMenu.descripcion" name="descripcion" label="Descripción" label-placement="floating" fill="outline" placeholder="Descripción del Menú"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-input [(ngModel)]="nuevoMenu.ingredientes" name="ingredientes" label="Ingredientes" label-placement="floating" fill="outline" placeholder="Lista de ingredientes"></ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-input [(ngModel)]="nuevoMenu.precio" name="precio" type="number" label="Precio" label-placement="floating" fill="outline" placeholder="Precio en CLP" required></ion-input>
+    </ion-item>
+    <br>
+    <ion-item>
+      <ion-input [(ngModel)]="nuevoMenu.imagen" name="imagen" label="Url Imagen" label-placement="floating" fill="outline" placeholder="URL de la imagen" required></ion-input>
+    </ion-item>
+<br>
+    <ion-button expand="block" (click)="guardarMenu()">Guardar Menú</ion-button>
+  </form>
+</ion-content>

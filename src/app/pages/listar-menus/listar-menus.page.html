@@ -1,0 +1,41 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Listar Menús</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card *ngIf="menus.length > 0">
+    <ion-card-header>
+      <ion-card-title>Menús Disponibles</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let menu of menus; let i = index">
+          <ion-thumbnail slot="start">
+            <img alt="Imagen del menú" [src]="menu.imagen" />  <!-- Mostrar imagen -->
+          </ion-thumbnail>
+          <ion-label>
+            <h2>{{ menu.nombre }}</h2>
+            <h3>{{ menu.descripcion }}</h3>
+            <p>{{ menu.ingredientes }}</p>
+            <p>{{ menu.precio.toLocaleString('es-CL', { style: 'currency', currency: 'CLP' }) }}</p>
+          </ion-label>
+          <ion-button color="danger" slot="end" (click)="eliminarMenu(i)" expand="block" shape="round">
+            Eliminar
+          </ion-button>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card *ngIf="menus.length === 0">
+    <ion-card-header>
+      <ion-card-title>No hay menús disponibles</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Agrega un nuevo menú para comenzar.</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
